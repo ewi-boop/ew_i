@@ -6,43 +6,44 @@
 <title>Portfolio</title>
 <style>
     * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', Arial, sans-serif;}
-    body { background-color: #1b0a2a; color: #fff; }
-    nav { display: flex; justify-content: space-between; padding: 20px 50px; background: rgba(20, 0, 40, 0.85); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; }
-    nav .logo { font-weight: bold; color: #ff99ff; font-size: 1.6rem; letter-spacing: 1px; }
-    nav a { color: #fff; text-decoration: none; margin-left: 20px; font-weight: 600; position: relative; transition: color 0.3s; }
-    nav a::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 2px; background: #ff99ff; transition: width 0.3s; }
-    nav a:hover { color: #ff99ff; }
+    body { background-color: #0a0a0a; color: #f5f5f5; }
+    nav { display: flex; justify-content: space-between; padding: 20px 50px; background: rgba(20, 20, 20, 0.9); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; }
+    nav .logo img { max-height: 50px; }
+    nav a { color: #f5f5f5; text-decoration: none; margin-left: 20px; font-weight: 600; position: relative; transition: color 0.3s; }
+    nav a::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 2px; background: #ef4444; transition: width 0.3s; }
+    nav a:hover { color: #ef4444; }
     nav a:hover::after { width: 100%; }
-    header { display: flex; align-items: center; justify-content: space-around; padding: 120px 50px; background: linear-gradient(135deg, #4a0aff, #b85cff); scroll-margin-top: 80px; }
+    header { display: flex; align-items: center; justify-content: space-around; padding: 120px 50px; background: linear-gradient(135deg, #1a1a1a, #2a2a2a); scroll-margin-top: 80px; }
     header .intro { max-width: 600px; text-align: center; }
     header .intro h1 { font-size: 2.8rem; margin-bottom: 20px; line-height: 1.3; }
-    header .intro h1 span { color: #ff99ff; }
-    header .intro button { padding: 12px 30px; background: #ff99ff; color: #1a001a; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; transition: background 0.3s, transform 0.2s; }
-    header .intro button:hover { background: #e066ff; transform: scale(1.05); }
-    header img { border-radius: 50%; max-width: 280px; margin-top: 30px; border: 5px solid #ff99ff; box-shadow: 0 0 25px rgba(255,153,255,0.6); }
+    header .intro h1 span { color: #ef4444; }
+    header .intro button { padding: 12px 30px; background: #ef4444; color: #fff; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; transition: background 0.3s, transform 0.2s; }
+    header .intro button:hover { background: #dc2626; transform: scale(1.05); }
+    header .logo-circle { width: 280px; height: 280px; border-radius: 50%; overflow: hidden; border: 5px solid #ef4444; box-shadow: 0 0 30px rgba(239,68,68,0.6); display: flex; align-items: center; justify-content: center; }
+    header .logo-circle img { width: 100%; height: 100%; object-fit: cover; }
     main { max-width: 1400px; margin: auto; }
     section { padding: 80px 50px; scroll-margin-top: 80px; }
-    section h2 { font-size: 3rem; font-weight: bold; margin-bottom: 40px; color: #ff99ff; text-align: center; }
+    section h2 { font-size: 3rem; font-weight: bold; margin-bottom: 40px; color: #ef4444; text-align: center; }
     #about p { font-size: 1.4rem; font-weight: 500; line-height: 2; }
     #skills div { display:flex;flex-wrap:wrap;gap:40px; justify-content:center; }
-    #skills div > div { background: rgba(255,153,255,0.1); padding:35px; border-radius:20px; width:650px; box-shadow: 0 4px 20px rgba(255,153,255,0.2); transition: transform 0.3s, box-shadow 0.3s; font-size: 1.6rem; font-weight: 700; }
-    #skills div > div:hover { transform: translateY(-5px); box-shadow: 0 6px 25px rgba(255,153,255,0.4); }
-    #skills h3 { color: #ff99ff; margin-bottom: 20px; text-align: center; font-size: 2.2rem; font-weight: bold; }
-    #skills ul { list-style-type: disc; padding-left: 25px; color: #fff; line-height: 2; font-weight: 600; font-size: 1.3rem; }
+    #skills div > div { background: rgba(239,68,68,0.05); padding:35px; border-radius:20px; width:650px; box-shadow: 0 4px 20px rgba(239,68,68,0.2); transition: transform 0.3s, box-shadow 0.3s; font-size: 1.6rem; font-weight: 700; }
+    #skills div > div:hover { transform: translateY(-5px); box-shadow: 0 6px 25px rgba(239,68,68,0.4); }
+    #skills h3 { color: #ef4444; margin-bottom: 20px; text-align: center; font-size: 2.2rem; font-weight: bold; }
+    #skills ul { list-style-type: disc; padding-left: 25px; color: #f5f5f5; line-height: 2; font-weight: 600; font-size: 1.3rem; }
     #pricing ul { list-style-type: none; padding-left: 0; line-height: 2; font-size: 1.4rem; font-weight: 600; text-align: center; }
-    form { display: flex; flex-direction: column; gap: 15px; background: rgba(255,153,255,0.05); padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(255,153,255,0.2); max-width: 600px; margin: auto; }
-    form label { display: flex; flex-direction: column; font-weight: bold; color: #fff; }
-    form input, form textarea { padding: 12px; border-radius: 8px; border: 1px solid #ff99ff; margin-top: 5px; font-size: 1rem; background: rgba(255,255,255,0.05); color: #fff; }
-    form input::placeholder, form textarea::placeholder { color: rgba(255,255,255,0.6); }
-    form button { padding: 12px 25px; background-color: #ff99ff; color: #1a001a; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: bold; transition: background 0.3s, transform 0.2s; }
-    form button:hover { background-color: #e066ff; transform: scale(1.05); }
-    footer { text-align: center; padding: 50px; background: rgba(20, 0, 40, 0.85); color: #ff99ff; }
+    form { display: flex; flex-direction: column; gap: 15px; background: rgba(239,68,68,0.05); padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(239,68,68,0.2); max-width: 600px; margin: auto; }
+    form label { display: flex; flex-direction: column; font-weight: bold; color: #f5f5f5; }
+    form input, form textarea { padding: 12px; border-radius: 8px; border: 1px solid #ef4444; margin-top: 5px; font-size: 1rem; background: rgba(255,255,255,0.05); color: #f5f5f5; }
+    form input::placeholder, form textarea::placeholder { color: rgba(245,245,245,0.6); }
+    form button { padding: 12px 25px; background-color: #ef4444; color: #fff; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: bold; transition: background 0.3s, transform 0.2s; }
+    form button:hover { background-color: #dc2626; transform: scale(1.05); }
+    footer { text-align: center; padding: 50px; background: rgba(20, 20, 20, 0.9); color: #ef4444; }
 </style>
 </head>
 <body>
 
 <nav>
-    <div class="logo">ew_i</div>
+    <div class="logo"><img src="fotogalerie/logo.PNG" alt="logo"></div>
     <div class="menu">
         <a href="#intro">Úvod</a>
         <a href="#about">O mně</a>
@@ -57,7 +58,9 @@
         <h1>Ahoj, jsem <span>ew_i</span><br>Web programátor & Manažer týmové komunikace</h1>
         <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Kontaktujte mě</button>
     </div>
-    <img src="https://via.placeholder.com/300" alt="ew_i">
+    <div class="logo-circle">
+        <img src="fotogalerie/logo.PNG" alt="Altima">
+    </div>
 </header>
 
 <main>
